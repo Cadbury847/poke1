@@ -1,7 +1,7 @@
 package mainGame;
 
-import java.util.Dictionary;
-import java.util.Hashtable;
+//import java.util.Dictionary;
+//import java.util.Hashtable;
 
 import data.PokemonData;
 import data.TypeData;
