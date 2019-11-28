@@ -14,7 +14,7 @@ public class Main {
 		TypeData.Initialize();
 		PokemonData.Initialize();
 		
-		String[][] tempDict =  (String[][]) PokemonData.pokemon.get("Bulbasaur").get("possibleMoves");
+		String[][] tempDict =  (String[][]) PokemonData.pokemon.get("Pikachu").get("possibleMoves");
 
 		for (Object[] i : tempDict) {
 			for (Object j : i) {
