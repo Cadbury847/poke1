@@ -12,14 +12,15 @@ public class Pokemon {
 	String[] weaknesses;
 	String[] strengths;
 	String[] noEffect;
-	String[] currentMoveSet;
+	public Dictionary<String, Integer> currentMoveSet = new Hashtable<String, Integer>();
 	Dictionary<Integer,String> possibleMoves;
 	boolean alive = false;
 	boolean captured = false;
 	boolean multiType = false;
+	public int currentHealth;
+	int maxHealth;
 	
-	
-	public Pokemon(String name, String nature, String[] type,  String[] currentMoveSet, 
+	public Pokemon(String name, String nature, String[] type,  Dictionary<String, Integer> currentMoveSet, 
 			Dictionary<Integer,String> possibleMoves, boolean alive, boolean captured, boolean multiType) {
 		this.name = name;
 		this.nature = nature;
@@ -31,14 +32,46 @@ public class Pokemon {
 		this.multiType = multiType;
 		
 		if (multiType) {
-			this.weaknesses = DataHandler.Concatenate(TypeData.WEAKNESSES.get(type[0]), TypeData.WEAKNESSES.get(type[1]));
-			this.strengths = DataHandler.Concatenate(TypeData.STRENGTHS.get(type[0]), TypeData.STRENGTHS.get(type[1]));
-			this.noEffect = DataHandler.Concatenate(TypeData.NOEFFECT.get(type[0]), TypeData.NOEFFECT.get(type[1]));
+			this.weaknesses = DataHandler.concatenate(TypeData.WEAKNESSES.get(type[0]), TypeData.WEAKNESSES.get(type[1]));
+			this.strengths = DataHandler.concatenate(TypeData.STRENGTHS.get(type[0]), TypeData.STRENGTHS.get(type[1]));
+			this.noEffect = DataHandler.concatenate(TypeData.NOEFFECT.get(type[0]), TypeData.NOEFFECT.get(type[1]));
 		} else {
 			this.weaknesses = TypeData.WEAKNESSES.get(type[0]);
 			this.strengths = TypeData.STRENGTHS.get(type[0]);
 			this.noEffect = TypeData.NOEFFECT.get(type[0]);
 		}
 		
+	}
+
+
+	public String[] getWeaknesses() {
+		return weaknesses;
+	}
+
+
+	public String[] getNoEffect() {
+		return noEffect;
+	}
+
+
+	public String[] getStrengths() {
+		return strengths;
+	}
+
+
+	public float getAccuracyMod() {
+		// TODO return accuracy mod
+		return 0;
+	}
+
+
+	public float getEvasionMod() {
+		// TODO return evasion mod
+		return 0;
+	}
+
+
+	public String getName() {
+		return name;
 	}
 }

@@ -455,7 +455,7 @@ public class PokemonData {
 ///////////////////////////////////////////////////////////////////35 CLEFAIRY///////////////////////////////////////////////////////////////////////	
 
 	static String[][] clefairyMoveTable = new String[][] {{"^1", "Growl", "Pound"}, {"^13", "Sing"}, {"^18", "Double Slap"}, {"^24", "Minimize"},
-									{"^31", "Metronme"}, {"^39", "Defense Curl"}, {"^48", "Light Screen"}};
+									{"^31", "Metronme"}, {"^39", "Defence Curl"}, {"^48", "Light Screen"}};
 	
 	static Object[] clefairyInfo1 = new Object[] {35, "Its magical and cute appeal has many admirers. It is rare and found only in certain areas.",
 							"Fairy Pokémon",0.6,7.5,"Normal","null", new Object[] {2,"HP"}, 150, 68, "fast", 25, 70, 45, 48, 60, 65, 35, 323, true,
@@ -504,7 +504,7 @@ public class PokemonData {
 
 ///////////////////////////////////////////////////////////////////39 JIGGLYPUFF///////////////////////////////////////////////////////////////////////	
 	
-	static String[][] jigglypuffMoveTable = new String[][] {{"^1", "Sing"}, {"^9", "Pound"}, {"^14", "Disable"}, {"^19", "Defense Curl"}, {"^24", 
+	static String[][] jigglypuffMoveTable = new String[][] {{"^1", "Sing"}, {"^9", "Pound"}, {"^14", "Disable"}, {"^19", "Defence Curl"}, {"^24", 
 									"Double Slap"}, {"^29", "Rest"}, {"^34", "Body Slam"}, {"^39", "Double-Edge"}};
 	
 	static Object[] jigglypuffInfo1 = new Object[] {39, "When its huge eyes light up, it sings a mysteriously soothing melody that lulls its enemies to sleep.",
@@ -518,7 +518,7 @@ public class PokemonData {
 
 ///////////////////////////////////////////////////////////////////40 WIGGLYTUFF///////////////////////////////////////////////////////////////////////	
 	
-	static String[][] wigglytuffMoveTable = new String[][] {{"^1", "Defense Curl", "Disable", "Double Slap", "Sing"}};
+	static String[][] wigglytuffMoveTable = new String[][] {{"^1", "Defence Curl", "Disable", "Double Slap", "Sing"}};
 	
 	static Object[] wigglytuffInfo1 = new Object[] {40, "The body is soft and rubbery. When angered, it will suck in air and inflate itself to an enormous size.",
 								"Balloon Pokémon",1.0,12.0, "Normal", "null", new Object[] {3,"HP"}, 50, 109, "fast", 25, 140, 70, 45, 85, 50, 45, 435,
@@ -958,11 +958,11 @@ public class PokemonData {
 
 ///////////////////////////////////////////////////////////////////74 GEODUDE///////////////////////////////////////////////////////////////////////	
 
-	static String[][] geodudeMoveTable = new String[][] {{"^1", "Tackle"}, {"^11", "Defense Curl"}, {"^16", "Rock Throw"}, {"^21", "Self-Destruct"},
+	static String[][] geodudeMoveTable = new String[][] {{"^1", "Tackle"}, {"^11", "Defence Curl"}, {"^16", "Rock Throw"}, {"^21", "Self-Destruct"},
 										{"^26", "Harden"}, {"^31", "Earthquake"}, {"^36", "Explosion"}};
 	
 	static Object[] geodudeInfo1 = new Object[] {74, "Found in fields and mountains. Mistaking them for boulders, people often step or trip on them.",
-						"Rock Pokémon",0.4,20.0,"Rock","Ground", new Object[] {1,"Defense"}, 255, 86, "medium slow", 50, 40, 80, 100, 30, 30, 20, 300,
+						"Rock Pokémon",0.4,20.0,"Rock","Ground", new Object[] {1,"Defence"}, 255, 86, "medium slow", 50, 40, 80, 100, 30, 30, 20, 300,
 						true, 25, false, "null", false, "Graveler", geodudeMoveTable, new int[] {04}, new int[] {1,6,8,9,10,17,18,19,20,26,27,28,31,32,34,
 						35,36,38,44,47,48,50}, "geodudeBackTexture.PNG", "geodudeFrontTexture.PNG", 
 						"geodudeShinyBackTexture.PNG", "geodudeShinyFrontTexture.PNG","geodudeDexTexture.PNG"};
@@ -971,7 +971,7 @@ public class PokemonData {
 
 ///////////////////////////////////////////////////////////////////75 GRAVELER///////////////////////////////////////////////////////////////////////	
 
-	static String[][] gravelerMoveTable = new String[][] {{"^1", "Defense Curl", "Tackle"}, {"^11", "Defense Curl"}, {"^16", "Rock Throw"},
+	static String[][] gravelerMoveTable = new String[][] {{"^1", "Defence Curl", "Tackle"}, {"^11", "Defence Curl"}, {"^16", "Rock Throw"},
 									{"^21", "Self-Destruct"}, {"^29", "Harden"}, {"^36", "Earthquake"}, {"^43", "Explosion"}};
 	
 	static Object[] gravelerInfo1 = new Object[] {75, "Rolls down slopes to move. It rolls over any obstacle without slowing or changing its direction.",
@@ -984,7 +984,7 @@ public class PokemonData {
 
 ///////////////////////////////////////////////////////////////////76 GOLEM///////////////////////////////////////////////////////////////////////	
 
-	static String[][] golemMoveTable = new String[][] {{"^1", "Defense Curl", "Tackle"}, {"^11", "Defense Curl"}, {"^16", "Rock Throw"},
+	static String[][] golemMoveTable = new String[][] {{"^1", "Defence Curl", "Tackle"}, {"^11", "Defence Curl"}, {"^16", "Rock Throw"},
 										{"^21", "Self-Destruct"}, {"^29", "Harden"}, {"^36", "Earthquake"}, {"^43", "Explosion"}};
 	
 	static Object[] golemInfo1 = new Object[] {76, "Its boulder-like body is extremely hard. It can easily withstand dynamite blasts without damage.",
@@ -1705,7 +1705,6 @@ public class PokemonData {
 	
 	
 	public static void Initialize() {
-
 		
 		for (int i = 0; i < secondaryFormat.length; i++) {
 			bulbInfo2.put(secondaryFormat[i], bulbInfo1[i]);			//1
