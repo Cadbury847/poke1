@@ -13,8 +13,8 @@ public class Combat {
 		int currentPP = userMon.currentMoveSet.get("Ember");
 
 		userMon.currentMoveSet.put("Ember", currentPP - 1);
-		String hit = attack(userMon, target, "Ember");
-		boolean burn;
+		int hit = attack(userMon, target, "Ember");
+		boolean burn = false;
 		String[] returner;
 		//do randint for burn, set boolean burn = true;
 		/* randint:
@@ -22,7 +22,8 @@ public class Combat {
 		 * int randint = random.nextInt(5); //randint between 0 and 4 (inc)*/
 		//apply burn effect
 		
-		String[] retStr = new String[] {userMon.getName()+" used Ember!", hit};
+		//String[] retStr = new String[] {userMon.getName()+" used Ember!", hit};
+		String[] retStr = new String[] {};
 		
 		if (burn){
 			returner = new String[] {retStr[0], retStr[1], "Enemy "+target.getName()+" was burned!"};
@@ -34,7 +35,7 @@ public class Combat {
 	}
 
 
-	private static String attack(Pokemon userMon, Pokemon target, String move){
+	private static int attack(Pokemon userMon, Pokemon target, String move){
 
 		String moveType = MoveData.getType(move);
 		float hitChance = data.MoveData.getAccuracy(move);
@@ -72,18 +73,18 @@ public class Combat {
 		if (hit){
 			if ((superEff > 1) & (halfEff == 1)){
 				target.currentHealth = target.currentHealth - (data.MoveData.getPower(move) * userMon.getStat(MoveData.moves.get(move)[2])) * superEff;
-				return "It's super effective!";
+				return 2;
 			} else if (noEff){
-				return "No effect!";
+				return 4;
 			} else if ((halfEff < 1) & (superEff == 1)){
-				target.currentHealth = target.currentHealth - (data.MoveData.getPower(move) * userMon.getStat(MoveData.moves.get(move)[2])) * halfEff;
-				return "It's not very effective.";
+				target.currentHealth = (int) (target.currentHealth - (data.MoveData.getPower(move) * userMon.getStat(MoveData.moves.get(move)[2])) * halfEff);
+				return 3;
 			} else {
 				target.currentHealth = target.currentHealth - data.MoveData.getPower(move) * userMon.getStat(MoveData.moves.get(move)[2]);
 				//getStat is trying to get SpAtk/Atk of attacking pokemon
 				//need to - foes SpDef/Def
-				return "null";
+				return 1;
 			}
-		}
+		} else { return 0; }
 	}
 }

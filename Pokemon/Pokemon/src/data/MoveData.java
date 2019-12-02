@@ -9,54 +9,63 @@ public class MoveData {
 	
 	//String[] format = new String[] {"type", "category", int power, int accuracy, int pp, "Effect"};
 	//https://pokemondb.net/move/generation/1
-	private static Object[] absorb = new Object[] {"Grass", "Special", 20, 100, 25, "User recovers half the HP inflicted on opponent."};
-	private static Object[] acid = new Object[] {"Poison", "Special", 40, 100, 30, "May lower opponent's Special Defence."};
-	private static Object[] acidArmour = new Object[] {"Poison", "Status", 0, 1000, 20, "Sharply raises user's Defence."};
+	private static Object[] absorb = new Object[] {"Grass", "Special", 20, 100, 20, "User recovers half the HP inflicted on opponent."};
+	private static Object[] acid = new Object[] {"Poison", "Physical", 40, 100, 30, "33% chance to lower opponent's Defence."}; //1 stage
+	private static Object[] acidArmour = new Object[] {"Poison", "Status", 0, 1000, 40, "Sharply raises user's Defence."};
 	private static Object[] agility = new Object[] {"Psychic", "Status", 0, 1000, 30, "Sharply raises user's Speed."};
 	private static Object[] amnesia = new Object[] {"Psychic", "Status", 0, 1000, 20, "Sharply raises user's Special Defence."};
-	private static Object[] auroraBeam = new Object[] {"Ice", "Special", 65, 100, 20, "May lower opponent's Attack."};
+	private static Object[] auroraBeam = new Object[] {"Ice", "Special", 65, 100, 20, "105 chance to lower opponent's Attack."}; //1 stage
 	private static Object[] barrage = new Object[] {"Normal", "Physical", 15, 85, 20, "Hits 2-5 times in one turn."};
-	private static Object[] barrier = new Object[] {"Psychic", "Status", 0, 1000, 20, "Sharply raises user's Defence."};
-	private static Object[] bide = new Object[] {"Normal", "Physical", 0, 1000, 10, "User takes damage for two turns then strikes back double."};
-	private static Object[] bind = new Object[] {"Normal", "Physical", 15, 85, 20, "Traps oppenent, damaging them for 4-5 turns."};
-	private static Object[] bite = new Object[] {"Normal", "Physical", 60, 100, 25, "May cause flinching."};
-	private static Object[] blizzard = new Object[] {"Ice", "Special", 100, 70, 5, "May freeze opponent."};
-	private static Object[] bodySlam = new Object[] {"Normal", "Physical", 85, 100, 15, "May paralyze opponent."};
-	private static Object[] boneClub = new Object[] {"Ground", "Physical", 65, 85, 20, "May cause flinching."};
+	//Barrage: 2 hits 3/8, 3 hits 3/8, 4 hits 1/8, 5 hits 1/8, each can crit independently
+	private static Object[] barrier = new Object[] {"Psychic", "Status", 0, 1000, 30, "Sharply raises user's Defence."}; //2 stages
+	private static Object[] bide = new Object[] {"Normal", "Physical", 0, 1000, 10, "User takes damage for 2-3 turns then strikes back double."};
+	//Bide: typeless damage (hits ghosts), ignores accuracy/evasion, can hit during dig/fly
+	private static Object[] bind = new Object[] {"Normal", "Physical", 15, 75, 20, "Traps oppenent, damaging them for 2-5 turns."};
+	//Bind: 1/8 their max hp after each turn. 
+	private static Object[] bite = new Object[] {"Normal", "Physical", 60, 100, 25, "30% chance to cause flinching."};
+	private static Object[] blizzard = new Object[] {"Ice", "Special", 120, 90, 5, "10% chance to freeze opponent."};
+	private static Object[] bodySlam = new Object[] {"Normal", "Physical", 85, 100, 15, "30% chance to paralyze opponent."};
+	private static Object[] boneClub = new Object[] {"Ground", "Physical", 65, 85, 20, "10% chance to cause flinching."};
 	private static Object[] bonemerang = new Object[] {"Ground", "Physical", 50, 90, 10, "Hits twice in one turn."};
-	private static Object[] bubble = new Object[] {"Water", "Special", 40, 100, 30, "May lower opponent's Speed."};
-	private static Object[] bubbleBeam = new Object[] {"Water", "Special", 65, 100, 20, "May lower opponent's Speed."};
-	private static Object[] clamp = new Object[] {"Water", "Physical", 35, 85, 10, "Traps opponent, damaging them for 4-5 turns."};
+	//Bonemerang: Each can crit independently
+	private static Object[] bubble = new Object[] {"Water", "Special", 20, 100, 30, "10% chance to lower opponent's Speed."};
+	private static Object[] bubbleBeam = new Object[] {"Water", "Special", 65, 100, 20, "10% chance to lower opponent's Speed."};
+	private static Object[] clamp = new Object[] {"Water", "Physical", 35, 75, 10, "Traps opponent, damaging them for 2-5 turns."}; //1/8 per turn
 	private static Object[] cometPunch = new Object[] {"Normal", "Physical", 18, 85, 15, "Hits 2-5 times in one turn."};
+	//Comet Punch: 2 hits 3/8, 3 hits 3/8, 4 hits 1/8, 5 hits 1/8, each can crit independently
 	private static Object[] confuseRay = new Object[] {"Ghost", "Status", 0, 100, 10, "Confuses opponent."};
-	private static Object[] confusion = new Object[] {"Psychic", "Special", 50, 100, 25, "May confuse opponent."};
-	private static Object[] constrict = new Object[] {"Normal", "Physical", 10, 100, 35, "May lower opponent's Speed."};
+	private static Object[] confusion = new Object[] {"Psychic", "Special", 50, 100, 25, "10% chance to confuse opponent."};
+	private static Object[] constrict = new Object[] {"Normal", "Physical", 10, 100, 35, "10% chance to lower opponent's Speed."}; //1 stage
 	private static Object[] conversion = new Object[] {"Normal", "Status", 0, 1000, 30, "Changes user's type to that of its opponent."};
 	private static Object[] counter = new Object[] {"Fighting", "Physical", 0, 100, 20, "When hit by a Physical Attack, user strikes back with 2x power."};
-	private static Object[] crabhammer = new Object[] {"Water", "Physical", 100, 90, 10, "High critical hit ratio."};
+	private static Object[] crabhammer = new Object[] {"Water", "Physical", 90, 85, 10, "High critical hit ratio."};
 	private static Object[] cut = new Object[] {"Normal", "Physical", 50, 95, 30, "Can also be used to cut certain types of tree."};
-	private static Object[] defenceCurl = new Object[] {"Normal", "Status", 0, 1000, 40, "Raises user's Defence."};
-	private static Object[] dig = new Object[] {"Ground", "Physical", 80, 100, 10, "Digs underground on first turn, attacks on second. Can also be used to escape from caves."};
-	private static Object[] disable = new Object[] {"Normal", "Status", 0, 55, 20, "Opponent can't use its last attack for a few turns."};
-	private static Object[] dizzyPunch = new Object[] {"Normal", "Physical", 70, 100, 10, "May confuse opponent."};
-	private static Object[] doubleKick = new Object[] {"Fighting", "Physical", 30, 100, 30, "Hits twice in one turn."};
+	private static Object[] defenceCurl = new Object[] {"Normal", "Status", 0, 1000, 40, "Raises user's Defence."}; //1 stage
+	private static Object[] dig = new Object[] {"Ground", "Physical", 60, 100, 10, "Digs underground on first turn, attacks on second. Can also be used to escape from caves."};
+	private static Object[] disable = new Object[] {"Normal", "Status", 0, 55, 20, "Opponent can't use its last attack for 1-8 turns."};
+	private static Object[] dizzyPunch = new Object[] {"Normal", "Physical", 70, 100, 10, ""};
+	private static Object[] doubleKick = new Object[] {"Fighting", "Physical", 30, 100, 30, "Hits twice in one turn."}; //independent
 	private static Object[] doubleSlap = new Object[] {"Normal", "Physical", 15, 85, 10, "Hits 1-5 times in one turn."};
-	private static Object[] doubleTeam = new Object[] {"Normal", "Status", 0, 1000, 15, "Raises user's Evasiveness."};
-	private static Object[] doubleEdge = new Object[] {"Normal", "Physical", 120, 100, 15, "User receives recoil damage."};
+	//Double Slap: 2 hits 3/8, 3 hits 3/8, 4 hits 1/8, 5 hits 1/8. independent
+	private static Object[] doubleTeam = new Object[] {"Normal", "Status", 0, 1000, 15, "Raises user's Evasiveness."}; //1 stage
+	private static Object[] doubleEdge = new Object[] {"Normal", "Physical", 100, 100, 15, "User receives recoil damage."};
+	//Double Edge: 1/4 recoil
 	private static Object[] dragonRage = new Object[] {"Dragon", "Special", 0, 100, 10, "Always inflicts 40HP."};
 	private static Object[] dreamEater = new Object[] {"Psychic", "Special", 100, 100, 15, "User recovers half the HP inflicted on a sleeping opponent."};
+	//Dream Eater: Only hits sleeping foes.
 	private static Object[] drillPeck = new Object[] {"Flying", "Physical", 80, 100, 20, ""};
 	private static Object[] earthquake = new Object[] {"Ground", "Physical", 100, 100, 10, "Power is doubled if opponent is underground from using Dig."};
 	private static Object[] eggBomb = new Object[] {"Normal", "Physical", 100, 75, 10, ""};
-	private static Object[] ember = new Object[] {"Fire", "Physical", 40, 100, 25, "May burn opponent."};
-	private static Object[] explosion = new Object[] {"Normal", "Physical", 250, 100, 5, "User faints."};
-	private static Object[] fireBlast = new Object[] {"Fire", "Special", 110, 85, 5, "May burn opponent."};
-	private static Object[] firePunch = new Object[] {"Fire", "Physical", 75, 100, 15, "May burn opponent."};
-	private static Object[] fireSpin = new Object[] {"Fire", "Special", 35, 85, 15, "Traps opponent, damaging them for 4-5 turns."};
-	private static Object[] fissure = new Object[] {"Ground", "Physical", 0, 1000, 5, "One-Hit-KO."};
-	private static Object[] flamethrower = new Object[] {"Fire", "Special", 90, 100, 15, "May burn opponent."};
-	private static Object[] flash = new Object[] {"Normal", "Status", 0, 1000, 20, "Lowers opponent's Accuracy. Can also be used to light up caves."};
-	private static Object[] fly = new Object[] {"Flying", "Physical", 90, 95, 15, "Flies up on first turn, attacks on second turn. Can also be used to travel to previously visited towns and cities."};
+	private static Object[] ember = new Object[] {"Fire", "Physical", 40, 100, 25, "10% chance to burn opponent."};
+	private static Object[] explosion = new Object[] {"Normal", "Physical", 340, 100, 5, "User faints."}; 
+	private static Object[] fireBlast = new Object[] {"Fire", "Special", 120, 85, 5, "10% chance to burn opponent."};
+	private static Object[] firePunch = new Object[] {"Fire", "Physical", 75, 100, 15, "10% chance to burn opponent."};
+	private static Object[] fireSpin = new Object[] {"Fire", "Special", 15, 70, 15, "Traps opponent, damaging them for 2-5 turns."}; //1/8 hp
+	private static Object[] fissure = new Object[] {"Ground", "Physical", 0, 0, 5, "One-Hit-KO. Accuracy(%) = UserLevel - TargetLevel + 30"};
+	private static Object[] flamethrower = new Object[] {"Fire", "Special", 955, 100, 15, "10% chance to burn opponent."};
+	private static Object[] flash = new Object[] {"Normal", "Status", 0, 70, 20, "Lowers opponent's Accuracy. Can also be used to light up caves."}; //1 stage
+	private static Object[] fly = new Object[] {"Flying", "Physical", 70, 95, 15, "Flies up on first turn, attacks on second turn. Can also be used to travel to previously visited towns and cities."};
+	// //////////////////////////// GOT TO HERE //////////////////////////https://pokemondb.net/move/generation/1
 	private static Object[] focusEnergy = new Object[] {"Normal", "Status", 0, 1000, 30, "Increases critical hit ratio."};
 	private static Object[] furyAttack = new Object[] {"Normal", "Physical", 15, 85, 20, "Hits 2-5 times in one turn."};
 	private static Object[] furySwipes = new Object[] {"Normal", "Physical", 18, 80, 15, "Hits 1-5 times in one turn."};
