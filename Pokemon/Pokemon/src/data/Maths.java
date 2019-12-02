@@ -1,5 +1,7 @@
 package data;
 
+import java.util.Random;
+
 import mainGame.Pokemon;
 
 public class Maths {
@@ -9,14 +11,15 @@ public class Maths {
 		return retVal;
 	}
 	
+	
 	public static int getNewStat(int b, int i, int statEXP, int l, String stat) {
 		
 		int newStat;
 		
 		if (stat == "HP") {
-			newStat = (int) Math.floor((2 * b + i + getE(statEXP)) * l / 100 + l + 10);
+			newStat = (int) Math.floor((2 * (b + i) + getE(statEXP)) * l / 100 + l + 10);
 		} else {
-			newStat = (int) Math.floor((2 * (b + i + getE(statEXP)) * l / 100 + 5));
+			newStat = (int) Math.floor((2 * (b + i) + getE(statEXP)) * l / 100 + 5);
 		}
 		
 		return newStat;
@@ -39,6 +42,14 @@ public class Maths {
 		}
 		
 		return x;
+	}
+	
+	public static int randint(int x) {
+		
+		Random random = new Random();
+		int randint = random.nextInt(x);
+		
+		return randint;
 	}
 
 }

@@ -1,11 +1,11 @@
 package mainGame;
 
+import java.util.Dictionary;
+import java.util.Hashtable;
+
 import data.DataHandler;
 import data.Maths;
 import data.MoveData;
-
-//import java.util.Dictionary;
-//import java.util.Hashtable;
 
 import data.PokemonData;
 import data.TypeData;
@@ -27,6 +27,41 @@ public class Main {
 		TypeData.Initialize();
 		//PokemonData.Initialize();
 		MoveData.Initialize();
+		
+		int hpTest = Maths.getNewStat(50, 15, 0, 100, "HP");
+		int atkTest = Maths.getNewStat(20, 15, 0, 100, "");
+		int defTest = Maths.getNewStat(55, 15, 0, 100, "");
+		int spdefTest = Maths.getNewStat(25, 15, 0, 100, "");
+		int spdTest = Maths.getNewStat(30, 15, 0, 100, "");
+		
+		System.out.println(hpTest);
+		System.out.println(atkTest);
+		System.out.println(defTest);
+		System.out.println(spdefTest);
+		System.out.println(spdTest);
+		System.out.println();
+		
+		Dictionary<String, Integer> currentMoves = new Hashtable<String, Integer>();
+		currentMoves.put("Splash", 40);
+		Dictionary<Integer,String> posMoves = new Hashtable<Integer,String>();
+		posMoves.put(1, "Splash");
+		
+		Pokemon testPoke = new Pokemon("Magikarp", new String[] {"Water"}, currentMoves, posMoves, true, true, false, 20);
+		
+		System.out.println(testPoke.getHPIV());
+		System.out.println(testPoke.getAttackIV());
+		System.out.println(testPoke.getDefenceIV());
+		System.out.println(testPoke.getSpAtkIV());
+		System.out.println(testPoke.getSpeedIV());
+		System.out.println();
+		
+		System.out.println(testPoke.getHP());
+		System.out.println(testPoke.getAttack());
+		System.out.println(testPoke.getDefence());
+		System.out.println(testPoke.getSpAtk());
+		System.out.println(testPoke.getSpeed());
+		System.out.println();
+		
 		
 		System.out.println(MoveData.getEffect("Ember"));
 		

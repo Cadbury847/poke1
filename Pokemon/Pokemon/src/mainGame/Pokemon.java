@@ -14,12 +14,13 @@ public class Pokemon {
 	boolean alive, captured, multiType, confused, paralyzed, burned, asleep, poisoned, strongPoison = false;
 	public int currentHealth, level, HP, attack, defence, specialAttack, specialDefence, speed;
 	private int oldAtk, oldDef, oldSpAtk, oldSpDef, oldSpeed, oldHp = 0;
+	private int atkStage, defStage, speedStage, spDefStage, spAtkStage, evasionStage, accuracyStage = 0;
+	private int HPIV, atkIV, defIV, speedIV, spDefIV, spAtkIV;
 	int maxHealth;
 	
-	public Pokemon(String name, String nature, String[] type,  Dictionary<String, Integer> currentMoveSet, 
+	public Pokemon(String name, String[] type,  Dictionary<String, Integer> currentMoveSet, 
 			Dictionary<Integer,String> possibleMoves, boolean alive, boolean captured, boolean multiType, int level) {
 		this.name = name;
-		this.nature = nature;
 		this.type = type;
 		this.currentMoveSet = currentMoveSet;
 		this.possibleMoves = possibleMoves;
@@ -27,7 +28,6 @@ public class Pokemon {
 		this.captured = captured;
 		this.multiType = multiType;
 		this.level = level;
-		this.oldAtk = 0;
 		
 		if (multiType) {
 			this.weaknesses = DataHandler.concatenate(TypeData.WEAKNESSES.get(type[0]), TypeData.WEAKNESSES.get(type[1]));
@@ -38,6 +38,20 @@ public class Pokemon {
 			this.strengths = TypeData.STRENGTHS.get(type[0]);
 			this.noEffect = TypeData.NOEFFECT.get(type[0]);
 		}
+		
+		this.atkIV = Maths.randint(16);
+		this.defIV = Maths.randint(16);
+		this.speedIV = Maths.randint(16);
+		this.spDefIV = Maths.randint(16);
+		this.spAtkIV = Maths.randint(16);
+		this.HPIV = Maths.setHPIV(this);
+		
+		this.attack = Maths.getNewStat(10, atkIV, 0, level, "");
+		this.defence = Maths.getNewStat(55, defIV, 0, level, "");
+		this.specialAttack = Maths.getNewStat(20, spAtkIV, 0, level, "");
+		this.specialDefence = Maths.getNewStat(20, spDefIV, 0, level, "");
+		this.speed = Maths.getNewStat(80, speedIV, 0, level, "");
+		this.HP = Maths.getNewStat(20, HPIV, 0, level, "HP");
 		
 	}
 
@@ -63,6 +77,29 @@ public class Pokemon {
 	}
 
 	
+	int getHP() {
+		return HP;
+	}
+	
+	int getAttack() {
+		return attack;
+	}
+	
+	int getDefence() {
+		return defence;
+	}
+	
+	int getSpeed() {
+		return speed;
+	}
+	
+	int getSpDef() {
+		return specialDefence;
+	}
+	
+	int getSpAtk() {
+		return specialAttack;
+	}
 
 	private int getHPXP() {
 		// TODO Auto-generated method stub
@@ -109,17 +146,34 @@ public class Pokemon {
 	}
 
 
-	public float getAccuracyMod() {
-		// TODO return accuracy mod
-		return 0;
+	public int getAccuracyMod() {
+		return accuracyStage;
 	}
 
 
-	public float getEvasionMod() {
-		// TODO return evasion mod
-		return 0;
+	public int getEvasionMod() {
+		return evasionStage;
 	}
-
+	
+	public int getAttackMod() {
+		return atkStage;
+	}
+	
+	public int getDefenceMod() {
+		return defStage;
+	}
+	
+	public int getSpeedMod() {
+		return speedStage;
+	}
+	
+	public int getSpDefMod() {
+		return spDefStage;
+	}
+	
+	public int getSpAtkMod() {
+		return spAtkStage;
+	}
 
 	public String getName() {
 		return name;
@@ -127,29 +181,27 @@ public class Pokemon {
 
 
 	public int getAttackIV() {
-		// TODO Auto-generated method stub
-		return 0;
+		return atkIV;
 	}
 	
 	public int getDefenceIV() {
-		return 0;
+		return defIV;
 	}
 	
 	public int getSpeedIV() {
-		return 0;
+		return speedIV;
 	}
 	
 	public int getSpAtkIV() {
-		return 0;
+		return spAtkIV;
 	}
 	
 	public int getSpDefIV() {
-		return 0;
+		return spDefIV;
 	}
 	
-	private int getHPIV() {
-		// TODO Auto-generated method stub
-		return 0;
+	int getHPIV() {
+		return HPIV;
 	}
 	
 	public int getBaseAtk() {

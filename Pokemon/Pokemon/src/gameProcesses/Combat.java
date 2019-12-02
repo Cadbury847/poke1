@@ -17,10 +17,7 @@ public class Combat {
 		boolean burn = false;
 		String[] returner;
 		//do randint for burn, set boolean burn = true;
-		/* randint:
-		 * Random random = new Random();
-		 * int randint = random.nextInt(5); //randint between 0 and 4 (inc)*/
-		//apply burn effect
+		
 		
 		//String[] retStr = new String[] {userMon.getName()+" used Ember!", hit};
 		String[] retStr = new String[] {};
